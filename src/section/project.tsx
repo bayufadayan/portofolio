@@ -8,7 +8,7 @@ export default function Project() {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`${process.env.VITE_API_URL}/projects`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/projects`);
             const resData = res.data;
 
             setData(resData);
