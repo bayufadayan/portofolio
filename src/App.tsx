@@ -1,33 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import profilePhoto from './assets/profile.png'
+import Navigation from './components/navigation'
+import Introduction from './section/introduction'
+import Project from './section/project'
+import ExperienceAndActivities from './section/experienceAndActivities'
+import Certificate from './section/certificate'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navigation />
+      <main>
+        <section className="introduction">
+          <Introduction />
+          <div className="profilePictures">
+            <img src={profilePhoto} alt="Profile Photo" />
+          </div>
+        </section>
+        <section className="projects">
+          <div className="headerTitle">PROJECTS</div>
+          <Project />
+        </section>
+        <section className="experience">
+          <div className="headerTitle" id="experiences">EXPERIENCES & ACTIVITIES</div>
+          <ExperienceAndActivities />
+        </section>
+        <section className="certification">
+          <div className="headerTitle" id="certificates">Certificate</div>
+          <Certificate />
+        </section>
+      </main>
+
+      <footer></footer>
     </>
   )
 }

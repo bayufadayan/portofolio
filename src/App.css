@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,600;1,14..32,600&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap');
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -11,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +25,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -33,10 +37,720 @@
   }
 }
 
-.card {
-  padding: 2em;
+/* ===============[MY STYLE]================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand, Montserrat;
+  color: #fff;
 }
 
-.read-the-docs {
-  color: #888;
+body {
+  padding-left: 80px;
+  padding-top: 60px;
+  overflow-x: hidden;
+  background-color: #121212;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100vw;
+  position: relative;
+}
+
+.introMainContent {
+  width: 55%;
+}
+
+.profilePictures {
+  width: 45%;
+}
+
+.introContent {
+  color: #FFF;
+  font-family: Quicksand;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 72px;
+}
+
+.introContent span {
+  padding: 4px 16px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #2E2E2E;
+}
+
+.jobTitle {
+  font-size: 52px;
+  display: flex;
+  gap: 16px;
+  margin-block: 10px;
+  text-transform: uppercase;
+}
+
+.jobTitle .prefix {
+  color: #FFF;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.jobTitle .position {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  background: linear-gradient(90deg, #FAECFF, #964BE1, #FAECFF);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+.portoDescription p {
+  color: #FFF;
+  text-align: justify;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.cvAndSocial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.downloadCVButton {
+  position: relative;
+  border-radius: 10px;
+  padding: 12px 25px;
+  background-color: #121212;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  margin-block: 16px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.downloadCVButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #48B7F5, #AA4EF2);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.downloadCVButton p {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: linear-gradient(90deg, #48B7F5 0%, #AA4EF2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.downloadCVButton:hover {
+  background: linear-gradient(90deg, #48B7F5, #AA4EF2);
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: translateY(-3px);
+}
+
+.downloadCVButton:hover p {
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+
+.profilePictures {
+  width: 50vw;
+  max-width: 700px;
+  position: absolute;
+  right: -150px;
+  top: -50px;
+  overflow: hidden;
+}
+
+.profilePictures img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.socialMedia {
+  display: flex;
+  font-size: 28px;
+  gap: 16px;
+}
+
+.socialMedia i:hover {
+  cursor: pointer;
+}
+
+.introSKill {
+  color: #E0E0E0;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.portoSkill {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #909090;
+  background: #252525;
+  overflow: hidden;
+}
+
+.skillContainer {
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.skillRow {
+  display: flex;
+  gap: 10px;
+  font-size: 38px;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.skill {
+  background-color: #520c97;
+  border-radius: 5px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill span {
+  font-size: 20px;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+.skillRow {
+  animation: slideFirst 1s ease-out forwards, slideLoop 10s ease-in-out infinite 1s;
+}
+
+.skillRow:nth-child(even) {
+  animation: slideFirst 1s ease-out forwards, slideLoopReverse 10s ease-in-out infinite 1s;
+}
+
+/* Efek masuk pertama kali */
+@keyframes slideFirst {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+/* Animasi looping maju */
+@keyframes slideLoop {
+  0% {
+    transform: translateX(-30%);
+  }
+
+  50% {
+    transform: translateX(-45%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+/* Animasi looping mundur */
+@keyframes slideLoopReverse {
+  0% {
+    transform: translateX(-30%);
+  }
+
+  50% {
+    transform: translateX(-15%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* 
+@keyframes slideFirst {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes slideLoop {
+  0% {
+    transform: translateX(-30%);
+  }
+
+  50% {
+    transform: translateX(-45%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes slideLoopReverse {
+  0% {
+    transform: translateX(-30%);
+  }
+
+  50% {
+    transform: translateX(-15%);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+} */
+
+/* =============  PROJECT  ============== */
+.projects,
+.experience,
+.certification {
+  margin-top: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-right: 80px;
+  /* background-color: #48B7F5; */
+}
+
+.headerTitle {
+  background: linear-gradient(90deg, #FAECFF 0%, #FB5353 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #252525;
+  border: 1px solid #909090;
+  width: 370px;
+  overflow: hidden;
+}
+
+.projectThumbnail {
+  position: relative;
+}
+
+.projectThumbnail img {
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid #964BE1;
+}
+
+.projectContent {
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projectText {
+  width: 80%;
+  text-align: left;
+}
+
+.projectText .title {
+  color: #FFF;
+  font-family: Quicksand;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.projectText .description {
+  font-size: 14px;
+}
+
+.projectLink {
+  width: 20%;
+  text-align: right;
+  color: #44A5FF;
+}
+
+.projectLink:hover {
+  cursor: pointer;
+}
+
+/* ====================== EXPERIENCE AND ACTIVITIES ====================== */
+/* STYLE UTAMA */
+
+#experiences {
+  background: linear-gradient(90deg, #d1e400 14.5%, #FAECFF 51.5%, #2fad01 87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  /* padding-inline: 10vw; */
+  align-items: center;
+}
+
+.experienceContainer {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.experienceList,
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #252525;
+  border: 1px solid #909090;
+  padding: 20px;
+  gap: 20px;
+  height: auto;
+  min-height: 300px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.experienceList h1,
+.activitiesList h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* EXPERIENCE ITEM */
+.experienceItem {
+  padding: 12px;
+  border-left: 4px solid rgba(144, 144, 144, 0.5);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+}
+
+.experienceItem:hover {
+  background-color: #181818;
+  border-left-color: #48B7F5;
+  cursor: pointer;
+}
+
+/* DETAIL EXPERIENCE */
+.experienceDate {
+  display: flex;
+
+}
+
+.experienceDetail {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: start;
+
+}
+
+.experienceDate {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.experienceTitle {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  font-family: Montserrat;
+
+}
+
+.experienceCompany {
+  display: flex;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #121212;
+  width: fit-content;
+  padding: 5px 16px;
+  font-size: 12px;
+  color: #48B7F5;
+  font-weight: bold;
+}
+
+.experienceDescription {
+  font-size: 14px;
+  color: #c0c0c0;
+  display: flex;
+  flex-direction: column;
+  word-break: normal;
+  text-align: justify;
+  gap: 10px;
+}
+
+.experienceTechnologies {
+  color: #5e5e5e;
+  font-size: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 800;
+}
+
+.experienceTechnologies span {
+  color: rgba(72, 183, 245, 0.8);
+}
+
+/* ACTIVITIES ITEM */
+.activitiesItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  align-items: start;
+  border: 1px solid #2E2E2E;
+}
+
+.activitiesItem:hover {
+  background-color: #181818;
+  border: 1px solid #48B7F5;
+  filter: drop-shadow(0 0 4px rgba(72, 183, 245, 0.2));
+  cursor: pointer;
+}
+
+.activitiesHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.activitiesHeader .activitiesTitle {
+  font-size: 23px;
+  width: 70%;
+  text-align: left;
+  font-weight: 800;
+}
+
+.activitiesType {
+  max-width: 30%;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50px;
+  background-color: #121212;
+  padding: 5px 16px;
+  font-size: 12px;
+  color: #AA4EF2;
+  font-weight: bold;
+}
+
+.activitiesDate {
+  font-size: 14px;
+  color: #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: start;
+  align-items: start;
+}
+
+.organizer {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.organizer span {
+  display: flex;
+  border-radius: 50px;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.activitiesDescription {
+  font-size: 14px;
+  color: #c0c0c0;
+  display: flex;
+  flex-direction: column;
+  word-break: normal;
+  text-align: justify;
+  gap: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .experienceContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experienceList,
+  .activitiesList {
+    max-width: 100%;
+  }
+}
+
+
+/* ========== Certificate ========= */
+.certificateContainer {
+  display: flex;
+  row-gap: 30px;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.certificateImage {
+  width: 279px;
+}
+
+.certificateItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.certificateImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.certificateDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.certificateDetail .certificateTitle {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#certificates {
+  background: linear-gradient(90deg, #FAECFF 3%, #C72FD4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  height: 200px;
 }
