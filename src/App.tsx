@@ -1,3 +1,4 @@
+'use client';
 import './App.css'
 import Navigation from './components/navigation'
 import Introduction from './section/introduction'
@@ -5,8 +6,10 @@ import Project from './section/project'
 import ExperienceAndActivities from './section/experienceAndActivities'
 import Certificate from './section/certificate'
 import ProfileImage from './components/profileImage'
+import useCanvasCursor from './components/useCanvasCursor';
 
 function App() {
+  useCanvasCursor();
 
   return (
     <>
