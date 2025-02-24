@@ -7,7 +7,7 @@ export default function ProfileImage() {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/personal-informations`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/personal-informations`);
             const resData = res.data;
 
             setData(resData);

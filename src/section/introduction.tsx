@@ -13,7 +13,7 @@ export default function Introduction() {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/personal-informations`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/personal-informations`);
             const resData = res.data;
 
             setData(resData);
@@ -24,7 +24,7 @@ export default function Introduction() {
 
     const fetchDataPosition = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/job-titles`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/job-titles`);
             const resData = res.data;
 
             setPosition(resData);
@@ -36,7 +36,7 @@ export default function Introduction() {
 
     const fetchDataSkill = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/skills`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/skills`);
             const resData = res.data;
 
             setSkills(resData);
@@ -48,7 +48,7 @@ export default function Introduction() {
 
     const fetchDataSocialMedia = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/social-medias`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/social-medias`);
             const resData = res.data;
 
             setSocialMedia(resData);

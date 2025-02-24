@@ -8,7 +8,7 @@ export default function Certificate() {
 
     const fetchCertificateData = async () => {
         try {
-            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/certificates`);
+            const res = await axios.get(`${process.env.VITE_API_URL}/certificates`);
             const resData = res.data;
 
             setCertificateData(resData);
