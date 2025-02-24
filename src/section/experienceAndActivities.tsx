@@ -10,7 +10,7 @@ export default function ExperienceAndActivities() {
 
     const fetchDataExperience = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/experiences`);
+            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/experiences`);
             const resData = res.data;
 
             setExperienceData(resData);
@@ -21,7 +21,7 @@ export default function ExperienceAndActivities() {
 
     const fetchActivitiesData = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/activities`);
+            const res = await axios.get(`http://api.bayufadayan.my.id/api/v1/activities`);
             const resData = res.data;
 
             setActivitiesData(resData);
