@@ -1,21 +1,30 @@
 
-export default function ActivityItem() {
+export default function ActivityItem({ title, type, date, organizer, description }: { title: string; type: string; date: string, organizer: string, description: string }) {
+    const formatDate = (dateString: string) => {
+        if (!dateString) return "Present";
+        const date = new Date(dateString);
+        return date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+        });
+    };
+    
     return (
         <div className="activitiesItem">
             <div className="activitiesHeader">
-                <div className="activitiesTitle">Backend Workshop Developer</div>
-                <div className="activitiesType">Pelatihan</div>
+                <div className="activitiesTitle">{title}</div>
+                <div className="activitiesType">{type}</div>
             </div>
             <div className="activitiesDate">
-                <span>21 Sept - 24 Sept 2025</span>
+                <span>{formatDate(date)}</span>
                 <div className="organizer">
                     <p>Organized by</p>
-                    <span>GDGoC Binus Bandung</span>
+                    <span>{organizer}</span>
                 </div>
             </div>
             <div className="activitiesDescription">
-                Belajar Membuat Aplikasi Golang untuk REST API sederhana
-                menggunakan Framework GIN
+                {description}
             </div>
         </div>
     )

@@ -1,10 +1,10 @@
 import './App.css'
-import profilePhoto from './assets/profile.png'
 import Navigation from './components/navigation'
 import Introduction from './section/introduction'
 import Project from './section/project'
 import ExperienceAndActivities from './section/experienceAndActivities'
 import Certificate from './section/certificate'
+import ProfileImage from './components/profileImage'
 
 function App() {
 
@@ -14,11 +14,9 @@ function App() {
       <main>
         <section className="introduction">
           <Introduction />
-          <div className="profilePictures">
-            <img src={profilePhoto} alt="Profile Photo" />
-          </div>
+          <ProfileImage />
         </section>
-        <section className="projects">
+        <section className="projects" id='projects'>
           <div className="headerTitle">PROJECTS</div>
           <Project />
         </section>

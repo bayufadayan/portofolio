@@ -1,14 +1,12 @@
-import certificatePhoto from '../assets/certificate.png'
-
-export default function CertificateItem() {
+export default function CertificateItem({image_url, title, issuer} : {image_url: string, title: string, issuer:string}) {
     return (
         <div className="certificateItem">
             <div className="certificateImage">
-                <img src={certificatePhoto} alt="certificate" />
+                <img src={image_url} alt="certificate" />
             </div>
             <div className="certificateDetail">
-                <div className="certificateTitle">Belajar Golang Pemula</div>
-                <div className="certificateIssuer">GDGoC Binus Bandung</div>
+                <div className="certificateTitle">{title}</div>
+                <div className="certificateIssuer">{issuer}</div>
             </div>
         </div>
     )

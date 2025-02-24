@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import ProjectCard from '../components/projectCard'
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
-export default function Project() {
+export default function ProfileImage() {
     const [data, setData] = useState<any[]>([]);
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/projects`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/personal-informations`);
             const resData = res.data;
 
             setData(resData);
@@ -22,10 +21,8 @@ export default function Project() {
     }, []);
 
     return (
-        <div className="projectContainer">
-            {data.map((item, index) => (
-                <ProjectCard key={index} title={item.title} description={item.description} demo_url={item.demo_url} thumbnail={item.thumbnail} />
-            ))}
+        <div className="profilePictures">
+            <img src={data.length > 0 ? data[0].profile_image : ""} alt="Profile Photo" />
         </div>
     )
 }
