@@ -3,7 +3,12 @@ import { useEffect, useState } from 'react';
 import SkillContainer from '../components/skillContainer'
 import axios from "axios";
 
-export default function Introduction() {
+type NavigationProps = {
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+  };
+
+export default function Introduction({ onMouseEnter, onMouseLeave }: NavigationProps) {
     const [data, setData] = useState<any[]>([]);
     const [position, setPosition] = useState<any[]>([]);
     const [index, setIndex] = useState(0);
@@ -99,16 +104,16 @@ export default function Introduction() {
             </div>
 
             <div className="cvAndSocial">
-                <a href={data.length > 0 ? data[0].resume_link : ""} target='_blank' className="downloadCVButton">
+                <a href={data.length > 0 ? data[0].resume_link : ""} target='_blank' className="downloadCVButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     <p>View My Resume</p>
                 </a>
 
                 <div className="socialMedia">
-                    <a href={`mailto:${data.length > 0 ? data[0].email : "bayufadayan@gmail.com"}`}> <i className="fa-solid fa-envelope"></i> </a>
+                    <a href={`mailto:${data.length > 0 ? data[0].email : "bayufadayan@gmail.com"}`}> <i className="fa-solid fa-envelope" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}></i> </a>
                     {socialMedia
                         .filter(item => item.type === "primary")
                         .map((item, index) => (
-                            <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
+                            <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                 <i className={item.icon}></i>
                             </a>
                         ))}

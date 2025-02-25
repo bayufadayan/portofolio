@@ -47,11 +47,78 @@
   color: #fff;
 }
 
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transition: transform 0.1s ease-out;
+  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  transition: transform 0.15s ease-out;
+  transition: width 0.2s ease, height 0.2s ease, left 0.2s ease, top 0.2s ease;
+}
+
+.cursor-outline-blur {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-out;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+}
+.cursor-dot,
+.cursor-outline,
+.cursor-outline-blur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-dot-change {
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #00FFFF 30%, #008B8B 70%);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 139, 139, 0.6);
+  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cursor-outline-change {
+  width: 20px;
+  height: 20px;
+  left: 13px ;
+  top: 13px ;
+  transition: width 0.2s ease, height 0.2s ease, left 0.2s ease, top 0.2s ease;
+}
+
+nav ul:has(li:hover) ~ .cursor-dot{
+  width: 20px;
+  height: 20px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   padding-left: 80px;
   padding-top: 60px;
   overflow-x: hidden;
   background-color: #121212;
+  cursor: none;
 }
 
 main {
@@ -63,7 +130,9 @@ main {
 nav ul a{
   text-decoration: none;
   display: flex;
+  cursor: none
 }
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -71,7 +140,7 @@ nav ul {
 }
 
 nav ul li:hover {
-  cursor: pointer;
+  cursor: none;
 }
 
 .introduction {
@@ -190,7 +259,7 @@ nav ul li:hover {
   overflow: hidden;
   margin-block: 16px;
   width: fit-content;
-  cursor: pointer;
+  cursor: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -263,13 +332,13 @@ nav ul li:hover {
 
 @keyframes floatProfile {
   0% {
-    transform: translateY(0);
+    transform: translate(0,0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate(-15px, -15px);
   }
   100% {
-    transform: translateY(0);
+    transform: translate(0,0);
   }
 }
 
@@ -283,6 +352,7 @@ nav ul li:hover {
 .socialMedia a{
   display: flex;
   text-decoration: none;
+  cursor: none;
 }
 
 .socialMedia i{
@@ -290,7 +360,7 @@ nav ul li:hover {
 }
 
 .socialMedia i:hover {
-  cursor: pointer;
+  cursor: none;
   filter: drop-shadow(0 0 16px #646cffaa);
   transform: scale(1.2);
 }
@@ -478,6 +548,10 @@ nav ul li:hover {
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+#projects{
+  scroll-margin-top: 42px;
 }
 
 .projectContainer {
