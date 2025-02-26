@@ -3,7 +3,16 @@ import ProjectCard from '../components/projectCard'
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
-export default function Project({ selectedCategory }: { selectedCategory: string | null }) {
+type HoverProps = {
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+};
+
+type ProjectProps = {
+    selectedCategory: string | null;
+} & HoverProps;
+
+export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }: ProjectProps) {
     const [data, setData] = useState<any[]>([]);
 
     const fetchData = async () => {
@@ -29,21 +38,37 @@ export default function Project({ selectedCategory }: { selectedCategory: string
     }, []);
 
     return (
-        <div className="projectContainer">
-            {filteredData.length > 0 ? (
-                filteredData.map((item, index) => (
-                    <ProjectCard
-                        key={index}
-                        title={item.title}
-                        description={item.description}
-                        demo_url={item.demo_url}
-                        thumbnail={item.thumbnail}
-                    />
-                ))
-            ) : (
-                <p className="noData">Stay tuned! New projects will be added soon.</p>
+        <>
+            <div className="projectContainer">
+                {filteredData.length > 0 ? (
+                    filteredData.slice(0, 6).map((item, index) => (
+                        <ProjectCard
+                            key={index}
+                            title={item.title}
+                            description={item.description}
+                            demo_url={item.demo_url}
+                            thumbnail={item.thumbnail}
+                            projectCategory={item.ProjectCategory.name}
+                            onMouseEnter={onMouseEnter} 
+                            onMouseLeave={onMouseLeave}
+                        />
+                    ))
+                ) : (
+                    <p className="noData">Stay tuned! New projects will be added soon.</p>
+                )}
+            </div>
+            {filteredData.length > 6 && (
+                <div
+                    className="seeAnotherButton moreProject"
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    >
+                    <p>
+                        View More Projects
+                    </p>
+                </div>
             )}
-        </div>
+        </>
     );
 
 }

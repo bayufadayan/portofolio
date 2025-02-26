@@ -81,7 +81,7 @@ function App() {
                 onMouseEnter={() => setCursorChange(true)}
                 onMouseLeave={() => setCursorChange(false)}
               >
-                Web or Mobile
+                Web/Mobile
               </li>
               <li
                 className={selectedCategory === 'other' ? 'active' : ''}
@@ -93,15 +93,25 @@ function App() {
               </li>
             </ul>
           </div>
-          <Project selectedCategory={selectedCategory} />
+          <Project
+            selectedCategory={selectedCategory}
+            onMouseEnter={() => setCursorChange(true)}
+            onMouseLeave={() => setCursorChange(false)}
+          />
         </section>
         <section className="experience">
           <div className="headerTitle" id="experiences">EXPERIENCES & ACTIVITIES</div>
-          <ExperienceAndActivities />
+          <ExperienceAndActivities
+            onMouseEnter={() => setCursorChange(true)}
+            onMouseLeave={() => setCursorChange(false)}
+          />
         </section>
         <section className="certification">
           <div className="headerTitle" id="certificates">Certificate</div>
-          <Certificate />
+          <Certificate
+            onMouseEnter={() => setCursorChange(true)}
+            onMouseLeave={() => setCursorChange(false)}
+          />
         </section>
       </main>
 

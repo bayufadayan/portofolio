@@ -3,7 +3,12 @@ import CertificateItem from "../components/certificateItem";
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
-export default function Certificate() {
+type HoverProps = {
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+};
+
+export default function Certificate({ onMouseEnter, onMouseLeave }: HoverProps) {
     const [certificateData, setCertificateData] = useState<any[]>([]);
 
     const fetchCertificateData = async () => {
@@ -25,7 +30,15 @@ export default function Certificate() {
         <div className="certificateContainer">
             {certificateData.map((item, index) => (
                 <CertificateItem key={index} image_url={item.image_url} title={item.title} issuer={item.issuer} />
-            ))}            
+            ))}
+
+            {certificateData.length > 12 && (
+                <div className="seeAnotherButton moreCertificate" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                    <p>
+                        View all Certicate
+                    </p>
+                </div>
+            )}
         </div>
     )
 }

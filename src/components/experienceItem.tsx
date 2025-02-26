@@ -1,4 +1,18 @@
-export default function ExperienceItem({ start_date, end_date, title, company, description, technologies }: { start_date: string, end_date: string, title: string, company: string, description: string, technologies: string }) {
+type HoverProps = {
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+};
+
+type ExperienceItemProps = {
+    start_date: string;
+    end_date: string;
+    title: string;
+    company: string;
+    description: string;
+    technologies: string;
+} & HoverProps;
+
+export default function ExperienceItem({ start_date, end_date, title, company, description, technologies, onMouseEnter, onMouseLeave }: ExperienceItemProps) {
     const formatDate = (dateString: string) => {
         if (!dateString) return "Present";
         const date = new Date(dateString);
@@ -10,7 +24,7 @@ export default function ExperienceItem({ start_date, end_date, title, company, d
     };
 
     return (
-        <div className="experienceItem">
+        <div className="experienceItem" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <div className="experienceDate">{formatDate(start_date)} - {end_date ? formatDate(end_date) : "Present"}</div>
             <div className="experienceDetail">
                 <div className="experienceTitle">{title}</div>
