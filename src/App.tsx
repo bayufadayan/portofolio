@@ -8,6 +8,7 @@ import ExperienceAndActivities from './section/experienceAndActivities'
 import Certificate from './section/certificate'
 import ProfileImage from './components/profileImage'
 import useCanvasCursor from './components/useCanvasCursor';
+import SideNavbar from './components/sideNavbar';
 
 function App() {
   useCanvasCursor();
@@ -49,7 +50,10 @@ function App() {
       <div className={`cursor-dot ${cursorChange ? "cursor-dot-change" : ""}`} ref={cursorDotRef}></div>
       <div className={`cursor-outline ${cursorChange ? "cursor-outline-change" : ""}`} ref={cursorOutlineRef}></div>
       <div className="cursor-outline-blur" ref={cursorOutlineBlurRef}></div>
-
+      <SideNavbar
+        onMouseEnter={() => setCursorChange(true)}
+        onMouseLeave={() => setCursorChange(false)}
+      />
       <Navigation
         onMouseEnter={() => setCursorChange(true)}
         onMouseLeave={() => setCursorChange(false)}

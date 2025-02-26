@@ -636,6 +636,7 @@ nav ul li:hover {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
+  scroll-margin-top: 42px;
   margin-bottom: 20px;
 }
 
@@ -892,6 +893,7 @@ nav ul li:hover {
 }
 
 #certificates {
+  scroll-margin-top: 42px;
   background: linear-gradient(90deg, #FAECFF 3%, #C72FD4 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -900,4 +902,84 @@ nav ul li:hover {
 
 footer {
   height: 200px;
+}
+
+/* ================SIDE NAVBAR================ */
+.sideNavbarContainer {
+  position: fixed;
+  z-index: 20;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 140px);
+  display: flex;
+  justify-content: center;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.sideNavbarContainer.show {
+  bottom: 30px;
+}
+
+.sideNavbarContent {
+  background: rgba(39, 39, 39, 0.5);
+  backdrop-filter: blur(10px);
+  list-style-type: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0px 10px 20px rgba(160, 160, 160, 0.4));
+}
+
+.sideNavbarContent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  padding: 2px;
+  background: linear-gradient(45deg, #d1d1d1, #a0a0a0, #808080, #606060, #d1d1d1);
+  background-size: 300% 300%;
+  animation: borderAnimation 5s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+@keyframes borderAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.sideNavbarContent {
+  border-image-slice: 1;
+}
+
+/* Styling item navbar */
+.sideNavbarContent a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  padding: 10px 16px;
+  border-radius: 100px;
+  position: relative;
+  cursor: none;
+  overflow: hidden;
+}
+
+/* Hover efek */
+.sideNavbarContent a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Animasi slide dari bawah */
+@keyframes slideUp {
+  from { bottom: -100px; }
+  to { bottom: 20px; }
 }
