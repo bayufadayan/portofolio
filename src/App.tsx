@@ -17,6 +17,7 @@ function App() {
   const cursorOutlineRef = useRef<HTMLDivElement | null>(null);
   const cursorOutlineBlurRef = useRef<HTMLDivElement | null>(null);
   const [cursorChange, setCursorChange] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("web_mobile");
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const posX = e.clientX;
@@ -72,7 +73,27 @@ function App() {
         </section>
         <section className="projects" id='projects'>
           <div className="headerTitle">PROJECTS</div>
-          <Project />
+          <div className='projectMenuContainer'>
+            <ul className="projectMenu">
+              <li
+                className={selectedCategory === 'web_mobile' ? 'active' : ''}
+                onClick={() => setSelectedCategory('web_mobile')}
+                onMouseEnter={() => setCursorChange(true)}
+                onMouseLeave={() => setCursorChange(false)}
+              >
+                Web or Mobile
+              </li>
+              <li
+                className={selectedCategory === 'other' ? 'active' : ''}
+                onClick={() => setSelectedCategory('other')}
+                onMouseEnter={() => setCursorChange(true)}
+                onMouseLeave={() => setCursorChange(false)}
+              >
+                Another Project
+              </li>
+            </ul>
+          </div>
+          <Project selectedCategory={selectedCategory} />
         </section>
         <section className="experience">
           <div className="headerTitle" id="experiences">EXPERIENCES & ACTIVITIES</div>

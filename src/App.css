@@ -76,9 +76,10 @@
   pointer-events: none;
   z-index: 9998;
 }
+
 .cursor-dot,
 .cursor-outline,
-.cursor-outline-blur{
+.cursor-outline-blur {
   position: fixed;
   top: 0;
   left: 0;
@@ -99,17 +100,17 @@
 .cursor-outline-change {
   width: 20px;
   height: 20px;
-  left: 13px ;
-  top: 13px ;
+  left: 13px;
+  top: 13px;
   transition: width 0.2s ease, height 0.2s ease, left 0.2s ease, top 0.2s ease;
 }
 
-nav ul:has(li:hover) ~ .cursor-dot{
+nav ul:has(li:hover)~.cursor-dot {
   width: 20px;
   height: 20px;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -127,7 +128,7 @@ main {
   gap: 100px;
 }
 
-nav ul a{
+nav ul a {
   text-decoration: none;
   display: flex;
   cursor: none;
@@ -157,7 +158,7 @@ nav ul a::after {
 }
 
 nav ul a:hover::after {
-  width: 100%; 
+  width: 100%;
 }
 
 
@@ -224,7 +225,7 @@ nav ul a:hover::after {
 }
 
 .position.fade-out {
-  animation: fadeInOutJob 3s ease-in-out infinite; 
+  animation: fadeInOutJob 3s ease-in-out infinite;
 }
 
 @keyframes fadeInOutJob {
@@ -341,7 +342,7 @@ nav ul a:hover::after {
   height: auto;
   object-fit: cover;
   animation: floatProfile 5s ease-in-out infinite;
-  
+
 }
 
 .profilePictures:hover {
@@ -350,13 +351,15 @@ nav ul a:hover::after {
 
 @keyframes floatProfile {
   0% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
+
   50% {
     transform: translate(-15px, -15px);
   }
+
   100% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
 }
 
@@ -367,13 +370,13 @@ nav ul a:hover::after {
   transition: all 0.3s ease-in-out;
 }
 
-.socialMedia a{
+.socialMedia a {
   display: flex;
   text-decoration: none;
   cursor: none;
 }
 
-.socialMedia i{
+.socialMedia i {
   transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -568,7 +571,7 @@ nav ul a:hover::after {
   margin-bottom: 20px;
 }
 
-#projects{
+#projects {
   scroll-margin-top: 42px;
 }
 
@@ -627,11 +630,12 @@ nav ul a:hover::after {
   font-size: 14px;
 }
 
-.projectLink i{
+.projectLink i {
   font-size: 24px;
   text-align: right;
   color: #44A5FF;
 }
+
 .projectLink {
   width: 20%;
   text-align: right;
@@ -673,6 +677,11 @@ nav ul a:hover::after {
   flex-wrap: wrap;
 }
 
+.forExperience, .forActivities {
+  display: flex;
+  flex-direction: column;
+}
+
 .experienceList,
 .activitiesList {
   display: flex;
@@ -687,6 +696,7 @@ nav ul a:hover::after {
   width: 100%;
   max-width: 500px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
 }
 
 .experienceList h1,
@@ -775,6 +785,20 @@ nav ul a:hover::after {
 
 .experienceTechnologies span {
   color: rgba(72, 183, 245, 0.8);
+}
+
+.seeAnotherButton{
+  position: relative;
+  display: flex;
+  background-color: #008B8B;
+  padding: 10px;
+  border-radius: 10px;
+  bottom: 0;
+  justify-content: center;
+}
+
+.seeAnotherButton p{
+  background-color: #2fad01;
 }
 
 /* ACTIVITIES ITEM */
@@ -923,7 +947,7 @@ footer {
 }
 
 /* ================SIDE NAVBAR================ */
-.toTheTop{
+.toTheTop {
   position: fixed;
   z-index: 21;
   bottom: -100px;
@@ -935,17 +959,17 @@ footer {
   transition: all 0.3s ease;
 }
 
-.toTheTop:hover{
+.toTheTop:hover {
   opacity: 1;
   transform: translateY(-10px);
 }
 
-.toTheTop a{
+.toTheTop a {
   pointer-events: auto;
   cursor: none;
 }
 
-.toTheTopContainer{
+.toTheTopContainer {
   background: rgba(39, 39, 39, 0.5);
   backdrop-filter: blur(10px);
   list-style-type: none;
@@ -984,7 +1008,8 @@ footer {
   transition: bottom 0.5s ease-in-out;
 }
 
-.sideNavbarContainer.show, .toTheTop.show {
+.sideNavbarContainer.show,
+.toTheTop.show {
   bottom: 30px;
 }
 
@@ -1016,9 +1041,17 @@ footer {
 }
 
 @keyframes borderAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .sideNavbarContent {
@@ -1045,6 +1078,54 @@ footer {
 
 /* Animasi slide dari bawah */
 @keyframes slideUp {
-  from { bottom: -100px; }
-  to { bottom: 20px; }
+  from {
+    bottom: -100px;
+  }
+
+  to {
+    bottom: 20px;
+  }
+}
+
+.projectMenuContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.projectMenu {
+  list-style-type: none;
+  margin-top: -30px;
+  display: flex;
+  background: rgba(39, 39, 39, 0.5);
+  backdrop-filter: blur(10px);
+  list-style-type: none;
+  padding: 5px 10px;
+  display: flex;
+  border-radius: 100px;
+  gap: 16px;
+  overflow: hidden;
+  width: fit-content;
+  border: 1px solid #444444;
+}
+
+.projectMenu li {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  padding: 4px 12px;
+  border-radius: 100px;
+  position: relative;
+  cursor: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.projectMenu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.projectMenu li.active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
