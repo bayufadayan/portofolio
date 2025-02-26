@@ -1225,3 +1225,166 @@ footer {
   margin-right: 8px;
   border-radius: 5px;
 }
+.aboutMe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  animation: fadeIn2 0.3s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: scaleIn2 0.3s ease-in-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+.aboutMe .content {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+
+.aboutMe .photo img {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.aboutMe .info {
+  flex: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+  overflow: hidden;
+}
+
+.aboutMe h1 {
+  font-size: 38px;
+  margin: 10px 0;
+  font-family: Montserrat;
+}
+
+.aboutMe .description {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.aboutMe .secondaryInformation ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.aboutMe .secondaryInformation li {
+  color: #ddd;
+  font-size: 16px;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.aboutMe .educationCard {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: left;
+  border-left: 4px solid #fff;
+}
+
+.aboutMe .educationCard p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.aboutMe .educationCard .institution {
+  font-weight: bold;
+  color: #fff;
+}
+
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn2 {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleOut2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+
+.aboutMe.closing {
+  animation: fadeOut2 0.3s ease-in-out forwards;
+}
+
+.aboutMe.closing .container {
+  animation: scaleOut2 0.3s ease-in-out forwards;
+}

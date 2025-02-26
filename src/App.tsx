@@ -18,6 +18,7 @@ function App() {
   const cursorOutlineBlurRef = useRef<HTMLDivElement | null>(null);
   const [cursorChange, setCursorChange] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("web_mobile");
+  const [isAboutMePressed, setIsAboutMePressed] = useState(false);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const posX = e.clientX;
@@ -62,12 +63,15 @@ function App() {
       <Navigation
         onMouseEnter={() => setCursorChange(true)}
         onMouseLeave={() => setCursorChange(false)}
+        onAboutMePressed={() => setIsAboutMePressed(true)}
       />
       <main>
         <section className="introduction">
           <Introduction
             onMouseEnter={() => setCursorChange(true)}
             onMouseLeave={() => setCursorChange(false)}
+            onAboutMePressed={() => setIsAboutMePressed(false)} 
+            isAboutMePressed={isAboutMePressed}            
           />
           <ProfileImage />
         </section>

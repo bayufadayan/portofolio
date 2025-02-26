@@ -2,13 +2,16 @@
 import { useEffect, useState } from 'react';
 import SkillContainer from '../components/skillContainer'
 import axios from "axios";
+import AboutMe from '../components/aboutMe';
 
 type NavigationProps = {
     onMouseEnter: () => void;
     onMouseLeave: () => void;
-  };
+    onAboutMePressed: () => void;
+    isAboutMePressed: boolean;
+};
 
-export default function Introduction({ onMouseEnter, onMouseLeave }: NavigationProps) {
+export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePressed, isAboutMePressed }: NavigationProps) {
     const [data, setData] = useState<any[]>([]);
     const [position, setPosition] = useState<any[]>([]);
     const [index, setIndex] = useState(0);
@@ -86,6 +89,18 @@ export default function Introduction({ onMouseEnter, onMouseLeave }: NavigationP
 
     return (
         <div className="introMainContent">
+            {isAboutMePressed && (
+                <AboutMe
+                    onAboutMePressed={onAboutMePressed}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    name={data.length > 0 ? data[0].name : "Loading..."}
+                    description={data.length > 0 ? data[0].description : "Loading..."}
+                    email={data.length > 0 ? data[0].email : "Loading..."}
+                    phone={data.length > 0 ? data[0].phone : "Loading..."}
+                    address={data.length > 0 ? data[0].address : "Loading..."}
+                />
+            )}
             <div className="introContent">
                 <h3>My name is <span>{data.length > 0 ? data[0].name : "Loading..."}</span></h3>
             </div>
