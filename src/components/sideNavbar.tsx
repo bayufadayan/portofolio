@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 type NavigationProps = {
     onMouseEnter: () => void;
     onMouseLeave: () => void;
+    onAboutMePressed: () => void;
   };
 
-export default function SideNavbar({ onMouseEnter, onMouseLeave }: NavigationProps) {
+export default function SideNavbar({ onMouseEnter, onMouseLeave, onAboutMePressed }: NavigationProps) {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -23,7 +24,7 @@ export default function SideNavbar({ onMouseEnter, onMouseLeave }: NavigationPro
                 <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href="#projects"><li>Projects</li></a>
                 <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href="#experiences"><li>Experience</li></a>
                 <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href="#certificates"><li>Certification</li></a>
-                <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href="#"><li>About Me</li></a>
+                <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href="" onClick={onAboutMePressed}><li>About Me</li></a>
             </ul>
         </div>
     );

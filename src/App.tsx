@@ -59,6 +59,7 @@ function App() {
       <SideNavbar
         onMouseEnter={() => setCursorChange(true)}
         onMouseLeave={() => setCursorChange(false)}
+        onAboutMePressed={() => setIsAboutMePressed(true)}
       />
       <Navigation
         onMouseEnter={() => setCursorChange(true)}
@@ -70,8 +71,8 @@ function App() {
           <Introduction
             onMouseEnter={() => setCursorChange(true)}
             onMouseLeave={() => setCursorChange(false)}
-            onAboutMePressed={() => setIsAboutMePressed(false)} 
-            isAboutMePressed={isAboutMePressed}            
+            onAboutMePressed={() => setIsAboutMePressed(false)}
+            isAboutMePressed={isAboutMePressed}
           />
           <ProfileImage />
         </section>
