@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import SkillContainer from '../components/skillContainer'
 import axios from "axios";
 import AboutMe from '../components/aboutMe';
+import Loading from '../components/loading';
+import ProfileImage from '../components/profileImage';
 
 type NavigationProps = {
     onMouseEnter: () => void;
@@ -18,60 +20,34 @@ export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePres
     const [isFading, setIsFading] = useState(false);
     const [skills, setSkills] = useState<any[]>([]);
     const [socialMedia, setSocialMedia] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/personal-informations`);
-            const resData = res.data;
+            const [personal, position, skills, social] = await Promise.all([
+                axios.get(`${import.meta.env.VITE_API_URL}/personal-informations`),
+                axios.get(`${import.meta.env.VITE_API_URL}/job-titles`),
+                axios.get(`${import.meta.env.VITE_API_URL}/skills`),
+                axios.get(`${import.meta.env.VITE_API_URL}/social-medias`)
+            ]);
 
-            setData(resData);
+            setData(personal.data);
+            setPosition(position.data);
+            setSkills(skills.data);
+            setSocialMedia(social.data);
         } catch (error) {
             console.error("Error fetching data:", error);
-        }
-    };
-
-    const fetchDataPosition = async () => {
-        try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/job-titles`);
-            const resData = res.data;
-
-            setPosition(resData);
-            console.error(resData);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
-
-    const fetchDataSkill = async () => {
-        try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/skills`);
-            const resData = res.data;
-
-            setSkills(resData);
-            console.error(resData);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
-
-    const fetchDataSocialMedia = async () => {
-        try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/social-medias`);
-            const resData = res.data;
-
-            setSocialMedia(resData);
-            console.error(resData);
-        } catch (error) {
-            console.error("Error fetching data:", error);
+        } finally {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 300);
         }
     };
 
     useEffect(() => {
         fetchData();
-        fetchDataPosition();
-        fetchDataSkill();
-        fetchDataSocialMedia();
     }, []);
+
 
     useEffect(() => {
         if (position.length === 0) return;
@@ -89,6 +65,9 @@ export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePres
 
     return (
         <div className="introMainContent">
+            {isLoading && (
+                <Loading />
+            )}
             {isAboutMePressed && (
                 <AboutMe
                     onAboutMePressed={onAboutMePressed}
@@ -118,6 +97,10 @@ export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePres
                 </p>
             </div>
 
+            <div className="mobileProfile">
+                <ProfileImage />
+            </div>
+
             <div className="cvAndSocial">
                 <a href={data.length > 0 ? data[0].resume_link : ""} target='_blank' className="downloadCVButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     <p>View My Resume</p>
@@ -135,6 +118,7 @@ export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePres
                     {/* <span> <i className="fa-solid fa-ellipsis"></i> </span> */}
                 </div>
             </div>
+
 
             <h2 className="introSKill">Tech Stack & Growing Skills</h2>
 

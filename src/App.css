@@ -32,8 +32,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+
+  /* a:nth-of-type(2) .logo { */
+  .logo {
+    animation: logo-spin infinite 2s linear;
   }
 }
 
@@ -554,6 +556,7 @@ nav ul a:hover::after {
   flex-direction: column;
   gap: 24px;
   margin-right: 80px;
+  animation: fadeInScaleMasuk 0.3s ease-in-out;
   /* background-color: #48B7F5; */
 }
 
@@ -1244,6 +1247,7 @@ footer {
 }
 
 .aboutMe,
+.bluryLoading,
 .projectModal {
   position: fixed;
   top: 0;
@@ -1261,10 +1265,20 @@ footer {
 }
 
 .projectModal .overlay,
+.bluryOverlay,
 .aboutMe .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.bluryOverlay .bluryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.7);
 }
 
 .aboutMe .container,
@@ -1317,6 +1331,7 @@ footer {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
+  animation: fadeInScaleMasuk 0.3s ease-in-out;
 }
 
 .projectModal .photo img {
@@ -1378,6 +1393,7 @@ footer {
   border-radius: 8px;
   text-align: left;
   border-left: 4px solid #fff;
+  animation: fadeInScaleMasuk 0.3s ease-in-out;
 }
 
 .aboutMe .educationCard p {
@@ -1459,12 +1475,14 @@ footer {
   flex: 2.5;
   overflow: hidden;
   border-radius: 10px;
+  animation: fadeInScaleMasuk 0.3s ease-in-out;
 }
 
 .projectModal .info {
   flex: 2;
   text-align: left;
   color: #ddd;
+  animation: fadeInScaleMasuk 0.3s ease-in-out;
 }
 
 .projectModal h1 {
@@ -1617,7 +1635,7 @@ footer {
   animation: scaleIn2 0.3s ease-in-out;
 }
 
-.moreCertificateDetail .modal-content{
+.moreCertificateDetail .modal-content {
   max-height: 85vh;
   width: 95%;
   background: #1e1e1e;
@@ -1669,7 +1687,7 @@ footer {
   gap: 15px;
 }
 
-.certificate-list{
+.certificate-list {
   display: flex;
   flex: 1;
   row-gap: 25px;
@@ -1677,7 +1695,7 @@ footer {
   flex-wrap: wrap;
 }
 
-.certificate-list .certificateItem.certificateItem:hover{
+.certificate-list .certificateItem.certificateItem:hover {
   opacity: 0.7;
 }
 
@@ -1718,4 +1736,332 @@ footer {
   margin: 5px 0 0;
   font-size: 14px;
   color: #b0b0b0;
+}
+
+@keyframes fadeInScaleMasuk {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav,
+  .profilePictures {
+    display: none;
+  }
+
+  body {
+    padding: 16px;
+  }
+
+  .introMainContent {
+    width: 100%;
+    /* background-color: red; */
+  }
+
+  main {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+  }
+
+  .introduction {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-width: 100%;
+  }
+
+  .cursor-dot,
+  .cursor-outline,
+  .cursor-outline-blur {
+    display: none;
+  }
+
+  .introContent {
+    margin-top: 20px;
+  }
+
+  .introContent h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .jobTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .jobTitle:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .portoDescription p {
+    font-size: 12px;
+    padding-inline: 10px;
+    text-align: center;
+  }
+
+  .cvAndSocial {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+    margin-block: 20px;
+    gap: 10px;
+  }
+
+  .socialMedia a {
+    font-size: 24px;
+  }
+
+  .introSKill {
+    text-align: center;
+  }
+
+  .projects,
+  .experience,
+  .certification {
+    margin-top: 0;
+    min-width: 100%;
+  }
+
+  .projectContainer {
+    width: 100%;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .projectCard {
+    width: 48%;
+  }
+
+  .moreProject {
+    width: 100%;
+  }
+
+  .forExperience {
+    width: 100%;
+  }
+
+  .certificateItem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #2a2a2a;
+    width: 100%;
+  }
+
+  .certificateImage {
+    width: 100%;
+  }
+
+  .certificateImage img {
+    height: 100%;
+  }
+
+  .certificateDetail .certificateTitle {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .certificateIssuer {
+    font-size: 14px;
+    color: #00ffff;
+  }
+
+  .certificateDetail {
+    flex-direction: column-reverse;
+    display: flex;
+    justify-content: start;
+    text-align: left;
+  }
+
+  .sideNavbarContainer {
+    position: fixed;
+    z-index: 20;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    transition: bottom 0.5s ease-in-out;
+    width: calc(100% - 30px);
+  }
+
+  .sideNavbarContainer.show,
+  .toTheTop.show {
+    bottom: 50px;
+  }
+
+  .sideNavbarContent a {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .toTheTop {
+    display: none;
+  }
+
+  .mobileProfile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobileProfile .profilePictures {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 400px;
+    height: 400px;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .downloadCVButton p {
+    font-size: 16px;
+    background-color: #00FFFF;
+  }
+
+  .projectContent {
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+    gap: 16px;
+    background-color: #1a1a1a;
+  }
+
+  .projectContent .projectText {
+    width: 100%;
+  }
+
+  .projectContent a {
+    width: 100%;
+    display: flex;
+    background-color: #2E2E2E;
+    border-radius: 2px;
+    padding: 6px 10px;
+    font-size: 14px;
+    justify-content: space-between;
+    color: white;
+  }
+
+  .projectContent a::before {
+    content: "Live Demo";
+  }
+
+  .projectContent a i {
+    font-size: 16px;
+    color: white;
+  }
+
+  .projectContent a:hover,
+  .projectContent a:hover i {
+    color: #48B7F5;
+  }
+
+  .projectMenu li {
+    font-size: 14px;
+  }
+
+  .aboutMe .container,
+  .projectModal .container {
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    animation: scaleIn2 0.3s ease-in-out;
+  }
+
+  .aboutMe .content,
+  .projectModal .content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .aboutMe .photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    animation: fadeInScaleMasuk 0.3s ease-in-out;
+  }
+
+  .aboutMe .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+  }
+
+  .personal h1{
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .description{
+    font-size: 12px !important;
+  }
+
+  .secondaryInformation ul li{
+    font-size: 12px !important;
+    justify-content: center;
+  }
+
+  .educationCard {
+    font-size: 12px;
+  }
+
+  .projectModal .container{
+    padding: 8px;
+  }
+
+  .projectModal .info{
+    width: 100%;
+  }
+  
+  .projectModal .photo img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .projectModal .info .personal {
+    margin-bottom: 14px;
+  }
+  .projectModal .info .personal h1, .projectModal .projectLabel, .projectModal .description{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .projectModal .info .personal .description{
+    font-size: 14px !important;
+  } 
 }

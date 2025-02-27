@@ -22,7 +22,10 @@ export default function ProfileImage() {
 
     return (
         <div className="profilePictures">
-            <img src={data.length > 0 ? data[0].profile_image : ""} alt="Profile Photo" />
+            <img
+                src={data.length > 0 ? data[0].profile_image : ""}
+                alt="Profile Photo"
+            />
         </div>
     )
 }
