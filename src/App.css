@@ -1679,6 +1679,10 @@ footer {
   font-weight: bold;
 }
 
+.moreActivityDetail .modal-content, .moreExperienceDetail .modal-content{
+  width: 90%;
+}
+
 .project-list,
 .activity-list,
 .experience-list {
@@ -1847,7 +1851,7 @@ footer {
   }
 
   .projectCard {
-    width: 48%;
+    width: 100%;
   }
 
   .moreProject {
@@ -1861,7 +1865,6 @@ footer {
   .certificateItem {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     padding: 0;
     justify-content: space-between;
     padding: 10px;
@@ -1911,10 +1914,15 @@ footer {
   .toTheTop.show {
     bottom: 50px;
   }
+  
+  .sideNavbarContent {
+    padding: 10px;
+    gap: 2px;
+  }
 
   .sideNavbarContent a {
     font-size: 12px;
-    padding: 4px 10px;
+    padding: 4px 8px;
   }
 
   .toTheTop {
@@ -2038,6 +2046,20 @@ footer {
     font-size: 12px;
   }
 
+  .aboutMe .educationCard {
+    border-radius: 8px;
+    text-align: left;
+    border-bottom: 3px solid #fff;
+    border-left: 0px solid #fff;
+    animation: fadeInScaleMasuk 0.3s ease-in-out;
+  }
+
+  .aboutMe .educationCard p {
+    text-align: center;
+    margin: 5px 0;
+    color: #ccc;
+  }
+
   .projectModal .container{
     padding: 8px;
   }
@@ -2064,4 +2086,37 @@ footer {
   .projectModal .info .personal .description{
     font-size: 14px !important;
   } 
+
+  .skillRow{
+    font-size: 24px;
+  }
+
+  .introSKill{
+    font-weight: 100px;
+  }
+  
+  .skill span {
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 481px) {
+  .jobTitle{
+    font-size: 20px !important;
+  }
+
+  .introContent h3 {
+    font-size: 12px;
+  }
+
+  .portoDescription p{
+    font-size: 12px !important;
+  }
+
+  .profilePictures{
+    margin-top: -20px;
+    transform: scale(0.9);
+  }
 }

@@ -41,7 +41,6 @@ export default function AboutMe({
             const resData = res.data;
 
             setEducation(resData);
-            console.error(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
         }

@@ -65,7 +65,7 @@ export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: 
                                 />
                             ))}
                     </div>
-                    {experienceData.length > 3 && (
+                    {experienceData.length > 1 && (
                         <div className="seeAnotherButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => setIsModalMoreExperienceOpen(!isModalMoreExperienceOpen)}>
                             <p>
                                 View More Experiences
