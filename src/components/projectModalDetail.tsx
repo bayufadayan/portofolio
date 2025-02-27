@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 
 type HoverProps = {
@@ -7,36 +8,50 @@ type HoverProps = {
 };
 
 type ProjectDetailProps = {
-    project_category: string;
-    title: string;
-    description: string;
-    detail_description: string;
-    repository_url: string;
-    demo_url: string;
-    demo_video: string;
-    thumbnail: string;
+    projects: any[];
+    currentIndex: number;
 } & HoverProps;
 
 export default function ProjectModalDetail({
+    projects,
+    currentIndex: initialIndex,
     onMouseEnter,
     onMouseLeave,
     onCloseModalButtonClick,
-    project_category,
-    title,
-    description,
-    detail_description,
-    repository_url,
-    demo_url,
-    demo_video,
-    thumbnail,
 }: ProjectDetailProps) {
+    const [project, setProject] = useState(projects[initialIndex]);
     const [isClosing, setIsClosing] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
     const handleClose = () => {
         setIsClosing(true);
         setTimeout(() => {
             onCloseModalButtonClick();
         }, 300);
+    };
+
+    const onNavigateNext = () => {
+        if (currentIndex < projects.length - 1) {
+            const nextIndex = currentIndex + 1;
+            setCurrentIndex(nextIndex);
+            setProject(projects[nextIndex]);
+        }
+        if (currentIndex === projects.length - 1) {
+            setCurrentIndex(0);
+            setProject(projects[0]);
+        }
+    };
+
+    const onNavigatePrevious = () => {
+        if (currentIndex > 0) {
+            const prevIndex = currentIndex - 1;
+            setCurrentIndex(prevIndex);
+            setProject(projects[prevIndex]);
+        }
+        if (currentIndex === 0) {
+            setCurrentIndex(projects.length - 1);
+            setProject(projects[projects.length - 1]);
+        }
     };
 
     return (
@@ -48,37 +63,38 @@ export default function ProjectModalDetail({
                 <div className="content">
                     <div className="info">
                         <div className="personal">
-                            <span className="projectLabel">{project_category}</span>
-                            <h1>{title}</h1>
-                            <p className="description">{description}</p>
+                            <span className="projectLabel">{project.ProjectCategory.name}</span>
+                            <h1>{project.title}</h1>
+                            <p className="description">{project.description}</p>
 
-                            <small > Details: </small>
+                            <small>Details:</small>
                             <div className="secondaryInformation">
-                                {detail_description}
+                                {project.detail_description === ""
+                                    ? "Details have not yet been added."
+                                    : project.detail_description}
                             </div>
                         </div>
-
                     </div>
                     <div className="photo">
-                        <img src={thumbnail} alt="Profile" />
+                        <img src={project.thumbnail} alt="Profile" />
                         <div className="linkProject">
                             <ul>
-                                {repository_url != "" && (
-                                    <a href={repository_url} target="_blank" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                {project.repository_url !== "" && (
+                                    <a href={project.repository_url} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         <i className="fa-brands fa-github"></i>
                                         <li>Repository</li>
                                     </a>
                                 )}
 
-                                {demo_url != "" && (
-                                    <a href={demo_url} target="_blank" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                {project.demo_url !== "" && (
+                                    <a href={project.demo_url} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         <i className="fa-solid fa-laptop"></i>
                                         <li>Live Demo</li>
                                     </a>
                                 )}
 
-                                {demo_video != "" && (
-                                    <a href={demo_video} target="_blank" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                {project.demo_video !== "" && (
+                                    <a href={project.demo_video} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         <i className="fa-solid fa-play"></i>
                                         <li>Video Showcase</li>
                                     </a>
@@ -89,9 +105,23 @@ export default function ProjectModalDetail({
                 </div>
             </div>
             <div className="navigationNext">
-                <span onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Previous</span>
-                <span onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Next</span>
+                <span
+                    onClick={onNavigatePrevious}
+                    className="no-select"
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                >
+                    Previous
+                </span>
+                <span
+                    onClick={onNavigateNext}
+                    className="no-select"
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                >
+                    Next
+                </span>
             </div>
         </div>
-    )
+    );
 }

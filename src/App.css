@@ -1542,3 +1542,10 @@ footer {
   background: rgba(255, 255, 255, 0.1);
   transform: scale(1.1);
 }
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

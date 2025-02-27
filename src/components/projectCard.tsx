@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import ProjectModalDetail from "./projectModalDetail";
 
@@ -14,6 +15,8 @@ type ProjectCardProps = {
     projectCategory: string;
     repository_url: string;
     demo_video: string;
+    projects: any[];
+    currentIndex: number;
 } & HoverProps;
 
 export default function ProjectCard({
@@ -22,13 +25,15 @@ export default function ProjectCard({
     demo_url,
     thumbnail,
     projectCategory,
-    repository_url,
-    demo_video,
+    projects,
+    currentIndex,
     onMouseEnter,
     onMouseLeave }: ProjectCardProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleModalButton = () => setIsModalOpen(!isModalOpen);
+    const handleModalButton = () => {
+        setIsModalOpen(!isModalOpen);
+    }
 
     const formatDescription = (text: string) => {
         const words = text.split(" ");
@@ -67,15 +72,10 @@ export default function ProjectCard({
                 <ProjectModalDetail
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
-                    onCloseModalButtonClick={handleModalButton}
-                    project_category={projectCategory}
-                    title={title}
-                    description={description}
-                    detail_description={"Belum Ada"}
-                    repository_url={repository_url}
-                    demo_url={demo_url}
-                    demo_video={demo_video}
-                    thumbnail={thumbnail} />
+                    onCloseModalButtonClick={() => setIsModalOpen(false)}
+                    projects={projects}
+                    currentIndex={currentIndex}
+                />
             )}
 
         </>

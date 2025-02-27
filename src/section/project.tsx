@@ -32,7 +32,6 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                 true
     );
 
-
     useEffect(() => {
         fetchData();
     }, []);
@@ -53,6 +52,8 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                             projectCategory={item.ProjectCategory.name}
                             onMouseEnter={onMouseEnter} 
                             onMouseLeave={onMouseLeave}
+                            projects={filteredData}
+                            currentIndex={index}
                         />
                     ))
                 ) : (
