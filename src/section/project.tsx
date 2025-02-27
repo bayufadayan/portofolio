@@ -48,6 +48,8 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                             description={item.description}
                             demo_url={item.demo_url}
                             thumbnail={item.thumbnail}
+                            repository_url={item.repository_url}
+                            demo_video={item.demo_video}
                             projectCategory={item.ProjectCategory.name}
                             onMouseEnter={onMouseEnter} 
                             onMouseLeave={onMouseLeave}
