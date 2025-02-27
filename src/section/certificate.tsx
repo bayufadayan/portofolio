@@ -2,6 +2,7 @@
 import CertificateItem from "../components/certificateItem";
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import MoreCertificateModal from "../components/moreCertificate";
 
 type HoverProps = {
     onMouseEnter: () => void;
@@ -10,6 +11,7 @@ type HoverProps = {
 
 export default function Certificate({ onMouseEnter, onMouseLeave }: HoverProps) {
     const [certificateData, setCertificateData] = useState<any[]>([]);
+    const [isModalMoreCertificateOpen, setIsModalMoreCertificateOpen] = useState(false);
 
     const fetchCertificateData = async () => {
         try {
@@ -33,11 +35,21 @@ export default function Certificate({ onMouseEnter, onMouseLeave }: HoverProps) 
             ))}
 
             {certificateData.length > 12 && (
-                <div className="seeAnotherButton moreCertificate" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                <div className="seeAnotherButton moreCertificate" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}
+                    onClick={() => setIsModalMoreCertificateOpen(!isModalMoreCertificateOpen)}
+                >
                     <p>
                         View all Certicate
                     </p>
                 </div>
+            )}
+            {isModalMoreCertificateOpen && (
+                <MoreCertificateModal
+                    onClose={() => setIsModalMoreCertificateOpen(!isModalMoreCertificateOpen)}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    certificates={certificateData}
+                />
             )}
         </div>
     )

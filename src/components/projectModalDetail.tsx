@@ -69,9 +69,9 @@ export default function ProjectModalDetail({
 
                             <small>Details:</small>
                             <div className="secondaryInformation">
-                                {project.detail_description === ""
+                                {project.description_detail === ""
                                     ? "Details have not yet been added."
-                                    : project.detail_description}
+                                    : project.description_detail}
                             </div>
                         </div>
                     </div>

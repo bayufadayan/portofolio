@@ -1,7 +1,3 @@
-type HoverProps = {
-    onMouseEnter: () => void;
-    onMouseLeave: () => void;
-};
 
 type ActivityItemProps = {
     title: string;
@@ -9,9 +5,9 @@ type ActivityItemProps = {
     date: string;
     organizer: string;
     description: string;
-} & HoverProps;
+};
 
-export default function ActivityItem({ title, type, date, organizer, description, onMouseEnter, onMouseLeave}: ActivityItemProps) {
+export default function ActivityItem({ title, type, date, organizer, description}: ActivityItemProps) {
     const formatDate = (dateString: string) => {
         if (!dateString) return "Present";
         const date = new Date(dateString);
@@ -23,7 +19,7 @@ export default function ActivityItem({ title, type, date, organizer, description
     };
 
     return (
-        <div className="activitiesItem" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        <div className="activitiesItem">
             <div className="activitiesHeader">
                 <div className="activitiesTitle">{title}</div>
                 <div className="activitiesType">{type}</div>

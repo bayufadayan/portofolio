@@ -2,7 +2,7 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function SkillContainer({ skills }: { skills: any }) {
-    const chunkSize = 12;
+    const chunkSize = 10;
     const overlap = 4;
     const chunkedSkills = [];
     for (let i = 0; i < skills.length; i += chunkSize - overlap) {

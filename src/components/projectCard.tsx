@@ -52,7 +52,7 @@ export default function ProjectCard({
                             <i className="fa-solid fa-up-right-and-down-left-from-center"></i>
                         </div>
                     </div>
-                    <img src={thumbnail} alt="thumbnail project" />
+                    <img src={thumbnail} alt="thumbnail project" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={handleModalButton} />
                 </div>
                 <div className="projectContent">
                     <div className="projectText">

@@ -3,6 +3,8 @@ import ActivityItem from "../components/activityItem";
 import ExperienceItem from "../components/experienceItem";
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import MoreExperienceModal from "../components/moreExperience";
+import MoreActivityModal from "../components/moreActivity";
 
 type ExperienceAndActivitiesProps = {
     onMouseEnter: () => void;
@@ -12,6 +14,8 @@ type ExperienceAndActivitiesProps = {
 export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: ExperienceAndActivitiesProps) {
     const [experienceData, setExperienceData] = useState<any[]>([]);
     const [activitiesData, setActivitiesData] = useState<any[]>([]);
+    const [isModalMoreExperienceOpen, setIsModalMoreExperienceOpen] = useState(false);
+    const [isModalMoreActivityOpen, setIsModalMoreActivityOpen] = useState(false);
 
     const fetchDataExperience = async () => {
         try {
@@ -58,17 +62,23 @@ export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: 
                                     company={item.company}
                                     description={item.description}
                                     technologies={item.technologies}
-                                    onMouseEnter={onMouseEnter}
-                                    onMouseLeave={onMouseLeave}
                                 />
                             ))}
                     </div>
                     {experienceData.length > 3 && (
-                        <div className="seeAnotherButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                        <div className="seeAnotherButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => setIsModalMoreExperienceOpen(!isModalMoreExperienceOpen)}>
                             <p>
                                 View More Experiences
                             </p>
                         </div>
+                    )}
+                    {isModalMoreExperienceOpen && (
+                        <MoreExperienceModal
+                            onClose={() => setIsModalMoreExperienceOpen(!isModalMoreExperienceOpen)}
+                            experiences={experienceData}
+                            onMouseEnter={onMouseEnter}
+                            onMouseLeave={onMouseLeave}
+                        />
                     )}
                 </div>
             </div>
@@ -87,17 +97,23 @@ export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: 
                                     date={item.date}
                                     organizer={item.organizer}
                                     description={item.description}
-                                    onMouseEnter={onMouseEnter}
-                                    onMouseLeave={onMouseLeave}
                                 />
                             ))}
                     </div>
                     {activitiesData.length > 3 && (
-                        <div className="seeAnotherButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                        <div className="seeAnotherButton" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={() => setIsModalMoreActivityOpen(!isModalMoreActivityOpen)}>
                             <p>
                                 View More Activities
                             </p>
                         </div>
+                    )}
+                    {isModalMoreActivityOpen && (
+                        <MoreActivityModal
+                            onClose={() => setIsModalMoreActivityOpen(!isModalMoreActivityOpen)}
+                            activities={activitiesData}
+                            onMouseEnter={onMouseEnter}
+                            onMouseLeave={onMouseLeave}
+                        />
                     )}
                 </div>
             </div>
