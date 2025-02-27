@@ -2,6 +2,7 @@
 import ProjectCard from '../components/projectCard'
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import MoreProjectModal from '../components/moreProjectModal';
 
 type HoverProps = {
     onMouseEnter: () => void;
@@ -14,6 +15,7 @@ type ProjectProps = {
 
 export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }: ProjectProps) {
     const [data, setData] = useState<any[]>([]);
+    const [isMoreProjectOpen, setIsMoreProjectOpen] = useState(false);
 
     const fetchData = async () => {
         try {
@@ -25,6 +27,8 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
             console.error("Error fetching data:", error);
         }
     };
+
+    const handleMoreProjectButton = () => setIsMoreProjectOpen(!isMoreProjectOpen)
 
     const filteredData = data.filter(item =>
         selectedCategory === 'web_mobile' ? [1, 2].includes(item.project_category_id) :
@@ -50,7 +54,7 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                             repository_url={item.repository_url}
                             demo_video={item.demo_video}
                             projectCategory={item.ProjectCategory.name}
-                            onMouseEnter={onMouseEnter} 
+                            onMouseEnter={onMouseEnter}
                             onMouseLeave={onMouseLeave}
                             projects={filteredData}
                             currentIndex={index}
@@ -65,11 +69,20 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                     className="seeAnotherButton moreProject"
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
-                    >
+                    onClick={handleMoreProjectButton}
+                >
                     <p>
                         View More Projects
                     </p>
                 </div>
+            )}
+            {isMoreProjectOpen && (
+                <MoreProjectModal
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    projects={filteredData}
+                    onClose={handleMoreProjectButton}
+                />
             )}
         </>
     );

@@ -79,8 +79,8 @@ export default function ProjectModalDetail({
                         <img src={project.thumbnail} alt="Profile" />
                         <div className="linkProject">
                             <ul>
-                                {project.repository_url !== "" && (
-                                    <a href={project.repository_url} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                {project.repo_url !== "" && (
+                                    <a href={project.repo_url} target="_blank" rel="noopener noreferrer" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         <i className="fa-brands fa-github"></i>
                                         <li>Repository</li>
                                     </a>
