@@ -53,7 +53,7 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                             thumbnail={item.thumbnail}
                             repository_url={item.repository_url}
                             demo_video={item.demo_video}
-                            projectCategory={item.ProjectCategory.name}
+                            projectCategory={item.ProjectCategory?.name ?? "-"}
                             onMouseEnter={onMouseEnter}
                             onMouseLeave={onMouseLeave}
                             projects={filteredData}
