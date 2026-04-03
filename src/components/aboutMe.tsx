@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
-import NewProfile from '../assets/new_profile.png';
+import NewProfile from '../assets/compressed.png';
 import axios from 'axios';
 
 type AboutMeProps = {
@@ -66,16 +66,22 @@ export default function AboutMe({
                             <div className="secondaryInformation">
                                 <ul>
                                     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                                        <i className="fa-solid fa-square-envelope"></i>
-                                        {email}
+                                        <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
+                                            <i className="fa-solid fa-square-envelope"></i>
+                                            {email}
+                                        </a>
                                     </li>
                                     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                                        <i className="fa-brands fa-square-whatsapp"></i>
-                                        {phone}
+                                        <a href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer">
+                                            <i className="fa-brands fa-square-whatsapp"></i>
+                                            {phone}
+                                        </a>
                                     </li>
                                     <li>
-                                        <i className="fa-solid fa-map-pin"></i>
-                                        {address}
+                                        <span>
+                                            <i className="fa-solid fa-map-pin"></i>
+                                            {address}
+                                        </span>
                                     </li>
                                 </ul>
                             </div>

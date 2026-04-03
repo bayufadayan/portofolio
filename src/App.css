@@ -89,6 +89,7 @@
   border-radius: 50%;
   z-index: 9999;
   pointer-events: none;
+  display: none;
 }
 
 .cursor-dot-change {
@@ -121,7 +122,6 @@ body {
   padding-top: 60px;
   overflow-x: hidden;
   background-color: #121212;
-  cursor: none;
 }
 
 main {
@@ -133,7 +133,7 @@ main {
 nav ul a {
   text-decoration: none;
   display: flex;
-  cursor: none;
+  cursor: pointer;
   position: relative;
 }
 
@@ -145,7 +145,7 @@ nav ul {
 }
 
 nav ul li:hover {
-  cursor: none;
+  cursor: pointer;
 }
 
 nav ul a::after {
@@ -280,7 +280,7 @@ nav ul a:hover::after {
   overflow: hidden;
   margin-block: 16px;
   width: fit-content;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
@@ -375,7 +375,7 @@ nav ul a:hover::after {
 .socialMedia a {
   display: flex;
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 .socialMedia i {
@@ -383,7 +383,7 @@ nav ul a:hover::after {
 }
 
 .socialMedia i:hover {
-  cursor: none;
+  cursor: pointer;
   filter: drop-shadow(0 0 16px #646cffaa);
   transform: scale(1.2);
 }
@@ -632,7 +632,7 @@ nav ul a:hover::after {
 }
 
 .projectContent a {
-  cursor: none;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
@@ -673,7 +673,7 @@ nav ul a:hover::after {
 }
 
 .projectLink:hover {
-  cursor: none;
+  cursor: pointer;
 }
 
 /* ====================== EXPERIENCE AND ACTIVITIES ====================== */
@@ -759,7 +759,7 @@ nav ul a:hover::after {
 .experienceItem:hover {
   background-color: #181818;
   border-left-color: #48B7F5;
-  cursor: none;
+  cursor: pointer;
   filter: drop-shadow(0 0 10px rgba(72, 183, 245, 0.2));
 }
 
@@ -860,7 +860,7 @@ nav ul a:hover::after {
   background-color: #181818;
   border: 1px solid #48B7F5;
   filter: drop-shadow(0 0 4px rgba(72, 183, 245, 0.2));
-  cursor: none;
+  cursor: pointer;
 }
 
 .activitiesHeader {
@@ -1010,7 +1010,7 @@ footer {
 
 .toTheTop a {
   pointer-events: auto;
-  cursor: none;
+  cursor: pointer;
 }
 
 .toTheTopContainer {
@@ -1111,7 +1111,7 @@ footer {
   padding: 10px 16px;
   border-radius: 100px;
   position: relative;
-  cursor: none;
+  cursor: pointer;
   overflow: hidden;
 }
 
@@ -1172,7 +1172,7 @@ footer {
   padding: 4px 12px;
   border-radius: 100px;
   position: relative;
-  cursor: none;
+  cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -1216,7 +1216,7 @@ footer {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
-  cursor: none;
+  cursor: pointer;
 }
 
 .expand:hover {
@@ -1310,7 +1310,7 @@ footer {
   border: none;
   font-size: 28px;
   color: #fff;
-  cursor: none;
+  cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -1376,7 +1376,7 @@ footer {
   margin-top: 10px;
 }
 
-.aboutMe .secondaryInformation li {
+.aboutMe .secondaryInformation li a, .aboutMe .secondaryInformation li span {
   color: #ddd;
   font-size: 16px;
   margin: 4px 0;
@@ -1384,6 +1384,15 @@ footer {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.aboutMe .secondaryInformation li a:hover {
+  color: #fff;
+  transform: translateX(5px);
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .aboutMe .educationCard {
@@ -1543,7 +1552,7 @@ footer {
   backdrop-filter: blur(5px);
   border-radius: 8px;
   padding: 10px;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: center;
@@ -1586,7 +1595,7 @@ footer {
   padding: 4px 12px;
   border-radius: 100px;
   position: relative;
-  cursor: none;
+  cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -1658,7 +1667,7 @@ footer {
   background: none;
   border: none;
   font-size: 24px;
-  cursor: none;
+  cursor: pointer;
   color: #e0e0e0;
 }
 

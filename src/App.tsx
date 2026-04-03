@@ -1,6 +1,6 @@
 'use client';
 import './App.css'
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useRef, useState } from "react";
 import Navigation from './components/navigation'
 import Introduction from './section/introduction'
 import Project from './section/project'
@@ -19,34 +19,6 @@ function App() {
   const [cursorChange, setCursorChange] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("web_mobile");
   const [isAboutMePressed, setIsAboutMePressed] = useState(false);
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    if (cursorDotRef.current) {
-      cursorDotRef.current.style.transform = `translate(${posX - 4}px, ${posY - 4}px)`;
-    }
-
-    if (cursorOutlineRef.current) {
-      cursorOutlineRef.current.animate(
-        { transform: `translate(${posX - 20}px, ${posY - 20}px)` },
-        { duration: 300, fill: "forwards", easing: "ease-out" }
-      );
-    }
-
-    if (cursorOutlineBlurRef.current) {
-      cursorOutlineBlurRef.current.animate(
-        { transform: `translate(${posX - 20}px, ${posY - 20}px)` },
-        { duration: 300, fill: "forwards", easing: "ease-out" }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
 
   return (
     <>
