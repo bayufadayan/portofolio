@@ -36,6 +36,10 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                 true
     );
 
+    const sortedData = [...filteredData].sort((a, b) =>
+        new Date(b.UpdatedAt).getTime() - new Date(a.UpdatedAt).getTime()
+    );
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -43,8 +47,8 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
     return (
         <>
             <div className="projectContainer">
-                {filteredData.length > 0 ? (
-                    filteredData.slice(0, 6).map((item, index) => (
+                {sortedData.length > 0 ? (
+                    sortedData.slice(0, 6).map((item, index) => (
                         <ProjectCard
                             key={index}
                             title={item.title}
@@ -56,7 +60,7 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                             projectCategory={item.ProjectCategory?.name ?? "-"}
                             onMouseEnter={onMouseEnter}
                             onMouseLeave={onMouseLeave}
-                            projects={filteredData}
+                            projects={sortedData}
                             currentIndex={index}
                         />
                     ))
@@ -64,7 +68,7 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                     <p className="noData">Stay tuned! New projects will be added soon.</p>
                 )}
             </div>
-            {filteredData.length > 6 && (
+            {sortedData.length > 6 && (
                 <div
                     className="seeAnotherButton moreProject"
                     onMouseEnter={onMouseEnter}
@@ -80,7 +84,7 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
                 <MoreProjectModal
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
-                    projects={filteredData}
+                    projects={sortedData}
                     onClose={handleMoreProjectButton}
                 />
             )}
