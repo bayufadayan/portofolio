@@ -5,6 +5,10 @@ import axios from "axios";
 import AboutMe from '../components/aboutMe';
 import Loading from '../components/loading';
 import ProfileImage from '../components/profileImage';
+import personalData from "../data/personal_informations.json";
+import jobTitleData from "../data/job-titles.json";
+import skillData from "../data/skills.json";
+import socialMediaData from "../data/social_medias.json";
 
 type NavigationProps = {
     onMouseEnter: () => void;
@@ -37,10 +41,18 @@ export default function Introduction({ onMouseEnter, onMouseLeave, onAboutMePres
             setSocialMedia(social.data);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setData(personalData);
+            setPosition(jobTitleData);
+            setSkills(skillData);
+            setSocialMedia(socialMediaData);
         } finally {
             setTimeout(() => {
                 setIsLoading(false);
             }, 300);
+            setData(personalData);
+            setPosition(jobTitleData);
+            setSkills(skillData);
+            setSocialMedia(socialMediaData);
         }
     };
 

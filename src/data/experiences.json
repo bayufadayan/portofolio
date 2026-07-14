@@ -1,0 +1,28 @@
+[
+  {
+    "id": 4,
+    "created_at": "2025-02-28 05:28:44.139462+07",
+    "updated_at": "2025-02-28 05:28:44.139462+07",
+    "deleted_at": null,
+    "title": "Internship",
+    "company": "BPMSPH (Balai Pengujian Mutu dan Sertifikasi Produk Hewan)",
+    "location": "Tanah Sereal, Bogor",
+    "start_date": "2024-08-01",
+    "end_date": "2024-09-13",
+    "description": "Developing an application for performance accountability assessment, covering the entire process from design and implementation to testing and deployment. Additionally, handling various media-related tasks, including creating posters, banners, infographics, and documentary videos.",
+    "technologies": "PostgreSQL, ReactJS, NextJS, Supabase"
+  },
+  {
+    "id": 5,
+    "created_at": "2025-02-28 05:34:58.070042+07",
+    "updated_at": "2025-02-28 05:34:58.070042+07",
+    "deleted_at": null,
+    "title": "Lecturer Assistant",
+    "company": "Pakuan University (Labkom)",
+    "location": "Tegal Lega, Bogor",
+    "start_date": "2021-09-13",
+    "end_date": null,
+    "description": "Responsible for ensuring that students can conduct practical sessions effectively, developing materials and modules, and actively engaging as a practitioner. Also served as a course coordinator at various times: in March 2024 for Computer Graphics, in October 2024 for Geographic Information Systems, and currently for Text Mining.",
+    "technologies": "Laravel, QGIS, Python, etc.."
+  }
+]

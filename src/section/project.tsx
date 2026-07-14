@@ -3,6 +3,7 @@ import ProjectCard from '../components/projectCard'
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import MoreProjectModal from '../components/moreProjectModal';
+import projectData from "../data/projects.json";
 
 type HoverProps = {
     onMouseEnter: () => void;
@@ -25,6 +26,9 @@ export default function Project({ selectedCategory, onMouseEnter, onMouseLeave }
             setData(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setData(projectData);
+        } finally {
+            setData(projectData);
         }
     };
 

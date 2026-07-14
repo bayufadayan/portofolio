@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import personalInformationData from "../data/personal_informations.json";
 
 export default function ProfileImage() {
     const [data, setData] = useState<any[]>([]);
@@ -13,6 +14,7 @@ export default function ProfileImage() {
             setData(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setData(personalInformationData);
         }
     };
 

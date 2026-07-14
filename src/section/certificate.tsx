@@ -3,6 +3,7 @@ import CertificateItem from "../components/certificateItem";
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import MoreCertificateModal from "../components/moreCertificate";
+import myCertificateData from "../data/certificates.json";
 
 type HoverProps = {
     onMouseEnter: () => void;
@@ -21,6 +22,9 @@ export default function Certificate({ onMouseEnter, onMouseLeave }: HoverProps) 
             setCertificateData(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setCertificateData(myCertificateData);
+        } finally {
+            setCertificateData(myCertificateData);
         }
     };
 

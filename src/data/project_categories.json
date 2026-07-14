@@ -1,0 +1,58 @@
+[
+  {
+    "id": 2,
+    "created_at": "2025-02-22 23:42:23.671311+07",
+    "updated_at": "2025-02-22 23:42:23.671311+07",
+    "deleted_at": null,
+    "name": "Mobile"
+  },
+  {
+    "id": 3,
+    "created_at": "2025-02-22 23:42:31.361418+07",
+    "updated_at": "2025-02-22 23:42:31.361418+07",
+    "deleted_at": null,
+    "name": "UI/UX"
+  },
+  {
+    "id": 1,
+    "created_at": "2025-02-22 23:42:01.097422+07",
+    "updated_at": "2025-02-26 23:30:43.313476+07",
+    "deleted_at": null,
+    "name": "Website"
+  },
+  {
+    "id": 4,
+    "created_at": "2025-02-27 16:58:21.736968+07",
+    "updated_at": "2025-02-27 16:58:21.736968+07",
+    "deleted_at": null,
+    "name": "Data Analytics"
+  },
+  {
+    "id": 5,
+    "created_at": "2025-02-27 16:59:35.227848+07",
+    "updated_at": "2025-02-27 16:59:35.227848+07",
+    "deleted_at": null,
+    "name": "Data Analytics"
+  },
+  {
+    "id": 6,
+    "created_at": "2025-02-27 17:00:10.479036+07",
+    "updated_at": "2025-02-27 17:00:10.479036+07",
+    "deleted_at": null,
+    "name": "Artificial Intelligence"
+  },
+  {
+    "id": 7,
+    "created_at": "2025-02-27 17:00:35.297209+07",
+    "updated_at": "2025-02-27 17:00:35.297209+07",
+    "deleted_at": null,
+    "name": "Machine Learning"
+  },
+  {
+    "id": 8,
+    "created_at": "2025-02-27 17:01:14.375972+07",
+    "updated_at": "2025-02-27 17:01:14.375972+07",
+    "deleted_at": null,
+    "name": "Game"
+  }
+]

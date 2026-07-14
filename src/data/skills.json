@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "created_at": "2025-02-24 22:16:25.819121+07",
+    "updated_at": "2025-02-24 22:16:25.819121+07",
+    "deleted_at": null,
+    "skill_name": "Laravel",
+    "icon_url": "fa-brands fa-laravel"
+  },
+  {
+    "id": 2,
+    "created_at": "2025-02-24 22:16:30.331887+07",
+    "updated_at": "2025-02-24 22:16:30.331887+07",
+    "deleted_at": null,
+    "skill_name": "PHP",
+    "icon_url": "fa-brands fa-php"
+  },
+  {
+    "id": 3,
+    "created_at": "2025-02-24 22:17:24.193478+07",
+    "updated_at": "2025-02-24 22:17:24.193478+07",
+    "deleted_at": null,
+    "skill_name": "C++",
+    "icon_url": "fa-brands fa-cpp"
+  },
+  {
+    "id": 4,
+    "created_at": "2025-02-24 22:17:49.330822+07",
+    "updated_at": "2025-02-24 22:17:49.330822+07",
+    "deleted_at": null,
+    "skill_name": "Dart",
+    "icon_url": "fa-brands fa-dart-lang"
+  },
+  {
+    "id": 5,
+    "created_at": "2025-02-24 22:18:10.43574+07",
+    "updated_at": "2025-02-24 22:18:10.43574+07",
+    "deleted_at": null,
+    "skill_name": "Flutter",
+    "icon_url": "fa-brands fa-flutter"
+  },
+  {
+    "id": 6,
+    "created_at": "2025-02-24 22:18:39.425084+07",
+    "updated_at": "2025-02-24 22:18:39.425084+07",
+    "deleted_at": null,
+    "skill_name": "Python",
+    "icon_url": "fa-brands fa-python"
+  },
+  {
+    "id": 7,
+    "created_at": "2025-02-24 22:19:54.372028+07",
+    "updated_at": "2025-02-24 22:19:54.372028+07",
+    "deleted_at": null,
+    "skill_name": "Flask",
+    "icon_url": "fa-brands fa-flask"
+  },
+  {
+    "id": 8,
+    "created_at": "2025-02-24 22:21:08.55292+07",
+    "updated_at": "2025-02-24 22:21:08.55292+07",
+    "deleted_at": null,
+    "skill_name": "Wordpress",
+    "icon_url": "fa-brands fa-wordpress"
+  },
+  {
+    "id": 9,
+    "created_at": "2025-02-24 22:21:34.250079+07",
+    "updated_at": "2025-02-24 22:21:34.250079+07",
+    "deleted_at": null,
+    "skill_name": "HTML",
+    "icon_url": "fa-brands fa-html5"
+  },
+  {
+    "id": 10,
+    "created_at": "2025-02-24 22:22:06.589267+07",
+    "updated_at": "2025-02-24 22:22:06.589267+07",
+    "deleted_at": null,
+    "skill_name": "CSS",
+    "icon_url": "fa-brands fa-css3-alt"
+  },
+  {
+    "id": 11,
+    "created_at": "2025-02-24 22:22:37.117244+07",
+    "updated_at": "2025-02-24 22:22:37.117244+07",
+    "deleted_at": null,
+    "skill_name": "Javascript",
+    "icon_url": "fa-brands fa-js"
+  },
+  {
+    "id": 12,
+    "created_at": "2025-02-24 22:23:10.593065+07",
+    "updated_at": "2025-02-24 22:23:10.593065+07",
+    "deleted_at": null,
+    "skill_name": "ReactJS",
+    "icon_url": "fa-brands fa-react"
+  },
+  {
+    "id": 13,
+    "created_at": "2025-02-24 22:24:03.41542+07",
+    "updated_at": "2025-02-24 22:24:03.41542+07",
+    "deleted_at": null,
+    "skill_name": "Golang",
+    "icon_url": "fa-brands fa-golang"
+  },
+  {
+    "id": 14,
+    "created_at": "2025-02-24 22:24:44.337897+07",
+    "updated_at": "2025-02-24 22:24:44.337897+07",
+    "deleted_at": null,
+    "skill_name": "Bootstrap",
+    "icon_url": "fa-brands fa-bootstrap"
+  },
+  {
+    "id": 15,
+    "created_at": "2025-02-24 22:25:54.015011+07",
+    "updated_at": "2025-02-24 22:25:54.015011+07",
+    "deleted_at": null,
+    "skill_name": "Figma",
+    "icon_url": "fa-brands fa-figma"
+  },
+  {
+    "id": 16,
+    "created_at": "2025-02-24 22:26:47.854543+07",
+    "updated_at": "2025-02-24 22:26:47.854543+07",
+    "deleted_at": null,
+    "skill_name": "NodeJS",
+    "icon_url": "fa-brands fa-node"
+  }
+]

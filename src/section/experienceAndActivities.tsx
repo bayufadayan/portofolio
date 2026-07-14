@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import MoreExperienceModal from "../components/moreExperience";
 import MoreActivityModal from "../components/moreActivity";
+import myExperienceData from "../data/experiences.json";
+import myActivityData from "../data/activities.json";
 
 type ExperienceAndActivitiesProps = {
     onMouseEnter: () => void;
@@ -25,6 +27,9 @@ export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: 
             setExperienceData(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setExperienceData(myExperienceData);
+        } finally {
+            setExperienceData(myExperienceData);
         }
     };
 
@@ -36,6 +41,9 @@ export default function ExperienceAndActivities({ onMouseEnter, onMouseLeave }: 
             setActivitiesData(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setActivitiesData(myActivityData);
+        } finally {
+            setActivitiesData(myActivityData);
         }
     };
 

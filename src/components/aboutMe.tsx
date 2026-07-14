@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import NewProfile from '../assets/compressed.png';
 import axios from 'axios';
+import educationData from "../data/educations.json";
 
 type AboutMeProps = {
     onMouseEnter: () => void;
@@ -43,6 +44,7 @@ export default function AboutMe({
             setEducation(resData);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setEducation(educationData);
         }
     };
 
