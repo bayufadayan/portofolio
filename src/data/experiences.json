@@ -2,27 +2,53 @@
   {
     "id": 4,
     "created_at": "2025-02-28 05:28:44.139462+07",
-    "updated_at": "2025-02-28 05:28:44.139462+07",
+    "updated_at": "2026-07-21 11:00:00+07",
     "deleted_at": null,
-    "title": "Internship",
+    "title": "Full Stack Engineer Intern",
     "company": "BPMSPH (Balai Pengujian Mutu dan Sertifikasi Produk Hewan)",
     "location": "Tanah Sereal, Bogor",
     "start_date": "2024-08-01",
     "end_date": "2024-09-13",
-    "description": "Developing an application for performance accountability assessment, covering the entire process from design and implementation to testing and deployment. Additionally, handling various media-related tasks, including creating posters, banners, infographics, and documentary videos.",
-    "technologies": "PostgreSQL, ReactJS, NextJS, Supabase"
+    "description": "Developed and deployed an employee performance assessment application as a solo developer. Designed the database, application flow, and UI/UX, then implemented authentication, role-based access, and performance evaluation features.",
+    "technologies": "Next.js, PostgreSQL, Supabase, Figma"
   },
   {
     "id": 5,
     "created_at": "2025-02-28 05:34:58.070042+07",
-    "updated_at": "2025-02-28 05:34:58.070042+07",
+    "updated_at": "2026-07-21 11:00:00+07",
     "deleted_at": null,
-    "title": "Lecturer Assistant",
-    "company": "Pakuan University (Labkom)",
-    "location": "Tegal Lega, Bogor",
-    "start_date": "2021-09-13",
+    "title": "Teaching Assistant",
+    "company": "Pakuan University (Computer Laboratory)",
+    "location": "Tegallega, Bogor",
+    "start_date": "2022-08-01",
+    "end_date": "2026-07-31",
+    "description": "Taught practical classes in web development, programming fundamentals, data mining, GIS, and text mining. Developed learning modules, assignments, exam cases, and provided guidance for student projects.",
+    "technologies": "Laravel, Python, QGIS, Data Mining, Text Mining"
+  },
+  {
+    "id": 6,
+    "created_at": "2026-07-21 11:00:00+07",
+    "updated_at": "2026-07-21 11:00:00+07",
+    "deleted_at": null,
+    "title": "Frontend Developer Intern",
+    "company": "PT Jero Media Abadi (Kelanara Studios)",
+    "location": "Indonesia",
+    "start_date": "2025-04-01",
+    "end_date": "2025-07-31",
+    "description": "Developed Gateplus, a responsive streaming platform for videos, podcasts, ebooks, and comics. Built multiple UI modules, integrated backend APIs, managed frontend state, and collaborated with backend and DevOps teams.",
+    "technologies": "Next.js, Express.js, Redux, REST API"
+  },
+  {
+    "id": 7,
+    "created_at": "2026-07-21 11:00:00+07",
+    "updated_at": "2026-07-21 11:00:00+07",
+    "deleted_at": null,
+    "title": "Staff Programmer",
+    "company": "PT Dagsap Endura Eatore",
+    "location": "Citeureup, West Java, Indonesia",
+    "start_date": "2026-05-11",
     "end_date": null,
-    "description": "Responsible for ensuring that students can conduct practical sessions effectively, developing materials and modules, and actively engaging as a practitioner. Also served as a course coordinator at various times: in March 2024 for Computer Graphics, in October 2024 for Geographic Information Systems, and currently for Text Mining.",
-    "technologies": "Laravel, QGIS, Python, etc.."
+    "description": "Developing SPID, an internal shipment management application that supports package tracking, role-based workflows, box management, scanning, and delivery history across company locations.",
+    "technologies": "React.js, Node.js, Express.js, MySQL, PWA"
   }
 ]
