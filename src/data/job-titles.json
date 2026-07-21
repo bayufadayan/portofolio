@@ -4,7 +4,7 @@
     "created_at": "2025-02-24 17:17:17.128342+07",
     "updated_at": "2025-02-24 17:17:17.128342+07",
     "deleted_at": null,
-    "title": "Web Enthusiast"
+    "title": "Fullstack Developer"
   },
   {
     "id": 4,
@@ -18,13 +18,13 @@
     "created_at": "2025-02-24 17:18:54.76901+07",
     "updated_at": "2025-02-24 17:18:54.76901+07",
     "deleted_at": null,
-    "title": "Fullstack Developer"
+    "title": "Mobile Developer"
   },
   {
     "id": 7,
     "created_at": "2025-02-27 23:01:49.511519+07",
     "updated_at": "2025-02-27 23:04:36.616176+07",
     "deleted_at": null,
-    "title": "UI/UX Designer"
+    "title": "Cloud Entusiast"
   }
 ]
